@@ -1,0 +1,26 @@
+# Site settings
+title:              Portfolio Template
+email:              seanbai2008@gmail.com
+description:        "Portfolio template for students in the MSR program at Northwestern University"
+url:                "http://127.0.0.1:4000"
+baseurl:            /fan_bai
+
+# File structure settings
+image_path:         /img
+
+# Build settings
+markdown:           kramdown
+permalink:          pretty
+
+# Collection definitions and settings
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+    
+defaults:
+    scope:
+        path: "/projects/:path/"
+        type: page
+    values:
+        layout: null
