@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Smart eraser</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -39,15 +39,19 @@
 <body id="page-top">
 
 
-
         <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="light">Youbot 8-DOF Simulator Design--In progress!</h2>
+                    <hr class="light">Smart eraser</h2>
                     <hr class="light2">
-                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
-                    <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
-                                        <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
 
-                    <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
+                    <p style = "text-align: left" > <font color="red">Keyword: Computer Vision, Kalman filter, Matlab</font></p>
+
+                    <p style = "text-align: left" >Visual tracking and texture imprinting techniques are both quite important in the field of image processing. This project is about implementing a program to erase the characters shown in a giving video while keeping the background texture unchanged perceptively.</p>
+                     <iframe src="//player.vimeo.com/video/160988505" width="680" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <p style = "text-align: left" >
+The input is a video segment where there is a foreground ”Can you erase me?”, and the background of the video is a newspaper texture. The video above shows the original video input. The goal for this project is to erase several characters automatically and gradually in a given video. </p>
+                     <iframe src="//player.vimeo.com/video/160987477" width="680" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <p style = "text-align: left" >
+The video above shows the result after it is processed. The pen tip is detected by a specially designed HIV filter and is marked with the white rectangle as it can be seen in the video. The yellow circle is the estimation of the position of the pen tip given by Kalman filter. The reason to add a Kalman filter to this project is that if a pen tip is incorrectly recognized or there is a oscillation of pen tip which may result in unwanted result (for example, it moves back), then Kalman filter can help get rid of such problem.</p>
 
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>

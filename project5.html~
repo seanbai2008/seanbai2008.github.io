@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Path planning demos for UR5</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -41,14 +41,17 @@
 
 
         <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="light">Youbot 8-DOF Simulator Design--In progress!</h2>
+                    <hr class="light">Path planning demos for UR5</h2>
                     <hr class="light2">
-                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
-                    <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
-                                        <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
-
-                    <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
-
+                    <iframe src="//player.vimeo.com/video/148574436" width="680" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <iframe src="//player.vimeo.com/video/146660499" width="680" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Python, Robot Manipulation</font></p>
+                    <p style = "text-align: left" >These two videos above show the simulation of a UR5 robot based on ROS. This demo is part of the assignments of MENG 449 Robotics Manipulation.</p>
+                    
+                                        <p style = "text-align: left" >In this project, a self-defined library which contains the functions for both solve the inverse kinematics and forward kinematics solutions. A self-designed urdf description is implemented which allows user to visualize the simulation on Rviz. 
+</p>
+                                        
+                                                            <p style = "text-align: left" >The two videos are both about path planning for UR5. The idea is that given two transforms of the end effector in SE3 space, a trajectory is planned between these two transforms. The robot is going to follow this trajectory until it reaches the destination. The first video shows trajectory based on joint angle method while the second video trajectory based on Cartesian method. </p>
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>
 

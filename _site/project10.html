@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Self-balance robot</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -39,15 +39,19 @@
 <body id="page-top">
 
 
-
         <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="light">Youbot 8-DOF Simulator Design--In progress!</h2>
+                    <hr class="light">Self-balance robot</h2>
                     <hr class="light2">
-                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
-                    <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
-                                        <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
 
-                    <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
+                    <p style = "text-align: left" > <font color="red">Keyword: IMU algorithm, PID control, Arduino</font></p>
+
+                    <p style = "text-align: left" > I did this project when I was interning at Robotics-unlimited, Pensacola. The whole project was based on
+                    self-balance robot where there was an humaniod robot standing on two wheels and that two wheels were used to be able to balance the robot.</p>
+
+                    <p style = "text-align: left" > IMU(accelerometer and gyroscope) were used to calculate the tilting angle of the robot. And PID control was desgined to make the robot
+                    maintain itself to be able to stand vertically. Also there is PID control on each wheel of the motor in terms of the velocity and position of the robot. </p>
+
+                    <p style = "text-align: left" > Throttling and steering data were the input of the system which user can remote control the self-balancing robot by using bluetooth communication.</p>
 
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>

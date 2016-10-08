@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Path planning demos for UR5</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -46,9 +46,9 @@
                     <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
                     <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
                                         <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
-
+                                        
                     <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
-
+                                        
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>
 

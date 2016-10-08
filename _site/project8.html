@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Android phone car</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -39,15 +39,27 @@
 <body id="page-top">
 
 
-
         <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="light">Youbot 8-DOF Simulator Design--In progress!</h2>
+                    <hr class="light">Android phone car</h2>
                     <hr class="light2">
-                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
-                    <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
-                                        <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
 
-                    <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
+                    <p style = "text-align: left" > <font color="red">Keyword: Android java, C, Onshape</font></p>
+                    <iframe src="//player.vimeo.com/video/186018963" width="680" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    <p style = "text-align: left" >
+                    This project is about designing a car from scratch and it is able to detect the track and follow the track</p>
+
+                    <p style = "text-align: left" >
+                    PCB board design, car frame design and vision algorithm are the main topic of this project </p>
+
+                    <p style = "text-align: left" >
+                    I used Eagle for PCB desgin, the board includes the chip and its peripheral which makes it able to be programmed. Also there is gate driver which control two servo motors of the car </p>
+                    <p style = "text-align: left" >
+                    As for car frame, I used Onshape to draw everything from scratch. The frame is able to hold the android phone, PCB board and it has slots to hold the motors and
+                    motor can drive the wheel.3D printer is used to print the frame</p>
+
+                    <p style = "text-align: left" >
+                    I used Android CDC(which is kind of USB communication) to realize the communication between PIC and andriod phone. The phone has an app where I programmed the contour detection algorithm which can
+                  return the center of the track. Then I used PID control for the car to follow the center of the tracks </p>
 
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>

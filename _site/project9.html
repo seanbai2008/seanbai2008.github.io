@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Youbot 8-DOF Simulator Design</title>
+    <title>Gestrue contorlled car</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -39,15 +39,24 @@
 <body id="page-top">
 
 
-
         <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <hr class="light">Youbot 8-DOF Simulator Design--In progress!</h2>
+                    <hr class="light">Gestrue contorlled car</h2>
                     <hr class="light2">
-                    <p style = "text-align: left" > <font color="red">Keyword: ROS, Gazebo, Moveit, Python, Robot Manipulation</font></p>
-                    <p style = "text-align: left" > What this package does is to implement a mobile manipulator for KUKA youBot in Moveit. In this package, MoveIt is able to do the plan for all 8 DOF (no one has ever done this before!) for youBot (this include the plan for the nonholonomic drive of the robot). A breif demo can be watched in the following link: https://vimeo.com/159656690</p>
-                                        <p style = "text-align: left" >Please click <a href="https://github.com/seanbai2008/youbot_moveit"><font color="red">here</font></a> to see the github package for this project</p>
 
-                    <p style = "text-align: left" >This project is still in progress and detail will be updated later</p>
+                    <p style = "text-align: left" > <font color="red"> Keyword: MPU9250, RF24, IMU algorithm, Communication protocl, Arduino</font></p>
+                    <p style = "text-align: left" > <font color="red"> This project is basically about using IMU to detect the orientation of the wristband where the IMU is embedded
+                    in the wristband</font></p>
+                    <p style = "text-align: left" > The IMU algorithm takes 6 degree of freedom data (data from accelerometer and gyroscope)
+                       and uses rotational matrix to calculate the roll, pitch angle of the wristband. Also it takes 9 degree of freedom data (accelerometer, gyroscope and magnetometer) into quaternion
+                       to calculate yaw angle (accelrometer and gyroscope are used for tilt compensation for the compass)</font></p>
+                   <p style = "text-align: left" > Kalman filter and complementery filter are used to smooth the raw data </font></p>
+                   <p style = "text-align: left" > Both wristband side and car side have radio module while the wristband serves as transimitter and the car board serves as
+                   receiver. A communication protocol is designed to send steering and throttling data from the wristband. The protocol is optimized to ensuare the car can be operated in the
+                   range of 20 meter radius with very stable communication. </p>
+                   <p style = "text-align: left" > The real engineering problem for this project is that there are 27 rotational matrix (rpy,ryp, ypr and so on...) and there is no specific
+                   rotational matrix which can be generalized for using. Also, there is considerable linear acceleration created by user moving the wristband, which can cause inaccuracy in orientation
+                 calculation. The solution to the first problem is to limit the working range of the IMU, this working range is acquired by large amount of tests. Linear acceleration can be get rid of by normalizing the accelerations measured on
+               all three axis, and then we do z = sqrt(1-x^2-y^2), assuming z is the acceleration on z-axis and the linear components in it has been removed.</font></p>                  
 
                          <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
         </div>
