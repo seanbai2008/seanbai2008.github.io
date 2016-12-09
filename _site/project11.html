@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dynamics and control of the Shoot-the-Moon game</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body id="page-top">
+
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="light">Dynamics and control of the Shoot-the-Moon game</h2>
+                    <hr class="light2">
+
+                    <p style = "text-align: left" > <font color="red">Keyword: Machine dynamics, Non-linear control, Mathematica, Arduino</font></p>
+                    <img src="img/shoot_the_moon.jpg" style ="text-align: center; vertical-align: middle; height: 500px; width:50% ">
+
+                    <p style = "text-align: left" > The classic game Shoot-the-Moon has interesting dynamics despite
+                    its simple structure, consisting of a steel ball rolling on two cylindrical rods. The
+                    two sloped rods are hinged at the lower ends and allowed to freely slide in a slot at
+                    the higher end. The ball can amazingly roll upward along the rods under carefully
+                    manipulation of the rods. There is also an interaction between ball rotation and
+                    translation that cause the ball to “shoot” (quickly accelerate).</p>
+
+                    <p style = "text-align: left" >The kinematics of the system are developed for the Shoot-the-Moon and then equations of motion
+                    are derived using Lagrangian approach. The constrain is that the ball has to be attached to the rod and the system is non-holonomic.</p>
+
+
+                    <p style = "text-align: left" >Two controlles based on the dynamic model are created. The first one is called Linearized Position Regulator
+                       which uses a local linearization at an equiibrium point of the dynamics. What this controller can do is given then current location of the
+                       ball and  a random target position along the rod, the controller will try to make the ball to stablize around the target postion by maanuvering the
+                       rod. The controll loop for this method is like this:
+
+
+                       The contorl loop above indicates a full state feed back control for a linearized system. By placing poles, we can get the gain for the system.
+                       Two pictures below are the simulation results using the Linearized Position Regulator method:
+
+                       The figure on the left is the reference trejactory of the ball on the rod. If the ball is at origin of the rod, then the controller will try to push
+                       the ball to reach the reference position.
+
+                       The second one is called Position Tracking Controller and what it does
+                       is that given a position on the rod, the controller can return a desired accerlation by changing the rod angle.
+                       The controll loop for this method is like this:
+
+                       Block "T" is the function which takes a referene accelaration with feedback and returns a theta which is the angle between the rods.Two pictures below are the simulation results
+                       using the Position Tracking Controller method:
+
+                       Position Tracking Controller has faster response than Linearized Position Regulator meaning it can allow the ball to do complex motion on the rod, for example a sinosodial
+                       motion. However, Linearized Position Regulator is much more realible becuase the Position Tracking Controller includes the sub-process of finding a root of a
+                       non-linear equation and it cannot always gurarrente to return a solution. Therefore, it makes Position Tracking Controller difficult to balance the the ball when it is
+                       far away from the origin.
+
+                       The mechenical design of the system is based on using stepper motor, pulleys and belts. The stepper motor is NEMA 23 unipolar steppr motor which has 200 steps to finish one revolution.
+                       I used DRV8835 as the H-brdige to interface the motor with my microcontroller and I progrmmed the microcontroller to be able to control the stepper motor to <!DOCTYPE html>
+                       half-step, meaning the it takes 400 steps for motor to finish one revolution.
+
+                       There are two pulleys in the system, one is attched to the motor and another one is the passive pulley. A timing belt is attached on those pulleys and
+                       the space between the pulley is adjusted so that it would cause enough tension on the belt. Two rods were attached to the belt while one is attached to the upper
+                       part of the belt and the other one is attached to the lower part of the belt. This configuration would allow the rod to move symmetrically in opposite direction when the
+                       motor is spinning.
+
+                       When all the parts of the system are well positioned, I sample the simulation trejactory and feed it into the motor. The video below shows my result. 
+
+                      </p>
+
+
+
+                         <a href="index.html" class="btn btn-primary btn-xl page-scroll" style="text-align: center" >Go Back</a>
+        </div>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="light">Let's Get In Touch!</h2>
+                    <hr class="light2">
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>224-420-0572</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">seanbai2008@gmail.com</a></p>
+                </div>
+            </div>
+             <p style="
+                     text-align: center">Credit: This website is based on a theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>
+             </p>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
